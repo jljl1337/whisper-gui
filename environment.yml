@@ -1,0 +1,13 @@
+name: whisper-gui
+
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.10.12
+  - pip=23.2.1
+  - ffmpeg=4.2.2=h04105a8_0
+  - pip:
+    - pyside6==6.6.1
+    - openai-whisper==20231117
