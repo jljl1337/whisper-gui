@@ -24,4 +24,4 @@ Then type `python ` and drag the `main.py` file into the terminal.
 
 ![Usage](./3use.gif)
 
-The larger the model, the longer it will take to run. A `txt` and a `srt` file will be created in the chosen folder.
+The larger the model, the longer it will take to run. A `output.txt` and a `output.srt` file will be created in the chosen folder.
