@@ -25,3 +25,13 @@ Then type `python ` (there is a space at the end) and drag the `main.py` file in
 ![Usage](./3use.gif)
 
 The larger the model, the longer it will take to run. A `output.txt` and a `output.srt` file will be created in the chosen folder.
+
+### IMPORTANT
+If there are `output.txt` and `output.srt` files in the folder, they will be overwritten.
+
+## 4. SRT and other formats
+
+The `output.srt` file is a caption file. You can upload it to YouTube or other platforms that support it.
+In Final Cut Pro, you can import it as a caption file, but there are some restrictions with the format.
+
+If you want to convert it to another format, you can use something like [this](https://crossub.xiaowude.com/srt/116) to convert the srt file into other format for Final Cut Pro.
