@@ -11,7 +11,7 @@ Place the file in something like Documents or Desktop, then unzip it.
 
 Open the terminal and the folder where you placed the files.
 
-Type `sudo zsh ` and drag the `make.sh` file into the terminal.
+Type `sudo zsh ` (there is a space at the end) and drag the `make.sh` file into the terminal.
 ![Install](./2make.gif)
 
 ### IMPORTANT
@@ -20,7 +20,7 @@ After the installation, close the terminal and open it again.
 ## 3. Usage
 
 Run `conda activate whisper-gui` to activate the environment.
-Then type `python ` and drag the `main.py` file into the terminal.
+Then type `python ` (there is a space at the end) and drag the `main.py` file into the terminal.
 
 ![Usage](./3use.gif)
 
