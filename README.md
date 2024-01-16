@@ -9,9 +9,9 @@ Place the file in something like Documents or Desktop, then unzip it.
 
 ## 2. Installation
 
-Open the terminal
+Open the terminal and the folder where you placed the files.
 
-Install the application:
+Type `sudo zsh ` and drag the `make.sh` file into the terminal.
 ![Install](./2make.gif)
 
 ### IMPORTANT
