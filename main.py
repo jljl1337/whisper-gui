@@ -30,6 +30,7 @@ def write_srt(segments, output_file):
 
 class ASRThread(QThread):
     progress_signal = Signal(str)
+    error_signal = Signal(str)
 
     def __init__(self, selected_file, selected_model, selected_language, output_location):
         super(ASRThread, self).__init__()
@@ -55,7 +56,8 @@ class ASRThread(QThread):
             time_taken = end_time - start_time
             self.progress_signal.emit(f"Done. Time taken: {time_taken:.2f} seconds.")
         except Exception as e:
-            self.progress_signal.emit(f"Error: {str(e)}")
+            self.error_signal.emit(str(e))
+            self.progress_signal.emit("Error occurred.")
 
 class ErrorWindow(QMainWindow):
     def __init__(self, error_message):
@@ -156,6 +158,10 @@ class MainWindow(QMainWindow):
     def update_progress(self, progress):
         self.progress_label.setText(progress)
 
+    def show_error(self, error_message):
+        self.error_window = ErrorWindow(error_message)
+        self.error_window.show()
+
     def run_asr(self):
         try:
             if not hasattr(self, 'selected_file') or not os.path.exists(self.selected_file):
@@ -180,6 +186,7 @@ class MainWindow(QMainWindow):
             selected_language = self.language_box.currentText()
             self.asr_thread = ASRThread(self.selected_file, selected_model, selected_language, self.output_location)
             self.asr_thread.progress_signal.connect(self.update_progress)
+            self.asr_thread.error_signal.connect(self.show_error) 
             self.asr_thread.finished.connect(self.asr_finished)
             self.asr_thread.start()
             self.run_button.setEnabled(False)
